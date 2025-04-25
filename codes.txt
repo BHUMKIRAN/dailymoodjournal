@@ -1,0 +1,150 @@
+Absolutely! Let's walk through how to use Postman to test all the API routes in your Mood Journal project, step-by-step. We'll cover:
+
+✅ Register
+✅ Login
+✅ Get Mood Entries
+✅ Add Mood Entry
+✅ Clear All Mood Entries
+
+🧪 Base URL
+Assuming your server is running locally:
+
+bash
+Copy
+Edit
+http://localhost:3000/api
+1️⃣ Register a User
+POST http://localhost:3000/api/auth/register
+
+Headers:
+json
+Copy
+Edit
+Content-Type: application/json
+Body (raw JSON):
+json
+Copy
+Edit
+{
+  "email": "testuser@example.com",
+  "password": "123456"
+}
+✅ Expected Response:
+json
+Copy
+Edit
+{
+  "token": "<JWT token>"
+}
+📌 Copy the token from the response for future requests.
+
+2️⃣ Login a User
+POST http://localhost:3000/api/auth/login
+
+Headers:
+json
+Copy
+Edit
+Content-Type: application/json
+Body (raw JSON):
+json
+Copy
+Edit
+{
+  "email": "testuser@example.com",
+  "password": "123456"
+}
+✅ Expected Response:
+json
+Copy
+Edit
+{
+  "token": "<JWT token>"
+}
+📌 Again, copy this token.
+
+3️⃣ Get All Mood Entries
+GET http://localhost:3000/api/entries
+
+Headers:
+text
+Copy
+Edit
+Authorization: Bearer <your_token>
+Replace <your_token> with the one you copied from login or register.
+
+✅ Expected Response:
+json
+Copy
+Edit
+[]
+(or a list of mood entries if you've added any)
+
+4️⃣ Add a Mood Entry
+POST http://localhost:3000/api/entries
+
+Headers:
+text
+Copy
+Edit
+Authorization: Bearer <your_token>
+Content-Type: application/json
+Body (raw JSON):
+json
+Copy
+Edit
+{
+  "mood": "😊 Happy",
+  "note": "Feeling great after a walk!",
+  "date": "2025-04-24 14:33"
+}
+(You can generate the date dynamically in JS or copy from new Date().toLocaleString())
+
+✅ Expected Response:
+json
+Copy
+Edit
+{
+  "mood": "😊 Happy",
+  "note": "Feeling great after a walk!",
+  "date": "2025-04-24 14:33",
+  "userId": 1713951322203
+}
+5️⃣ Clear All Mood Entries (for logged-in user)
+DELETE http://localhost:3000/api/entries
+
+Headers:
+text
+Copy
+Edit
+Authorization: Bearer <your_token>
+✅ Expected Response:
+json
+Copy
+Edit
+{
+  "message": "All entries cleared for user."
+}
+🔁 Common Errors & Fixes
+
+Error	Fix
+No token provided	Add Authorization: Bearer <token> header
+Invalid token	Make sure the token is fresh and correct
+Email already registered	Use a different email or test login route
+💡 Tip: Use Postman Environments
+Set a Postman environment variable called token and reference it like this:
+
+http
+Copy
+Edit
+Authorization: Bearer {{token}}
+Then you can update it once after login, and reuse it in all routes.
+
+Want me to help you import this collection as a .postman_collection.json file? Or guide you through setting it up in Postman visually?
+
+
+
+
+Get smarter responses, upload files and images, and more.
+
+L
