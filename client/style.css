@@ -1,0 +1,106 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2 {
+  margin-top: 30px;
+  font-size: 1.25rem;
+}
+
+/* Forms */
+form {
+  margin-top: 20px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Entry Card */
+.entry {
+  background: #eef6ff;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+/* Auth Switch Link */
+#authForm p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+#authForm a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+#authForm a:hover {
+  text-decoration: underline;
+}
+
+/* Logout Button */
+#logoutBtn {
+  background-color: #dc3545;
+  margin-bottom: 20px;
+}
+#logoutBtn:hover {
+  background-color: #bb2d3b;
+}
+
+/* Clear Button */
+#clearHistory {
+  background-color: #6c757d;
+  margin-bottom: 10px;
+}
+#clearHistory:hover {
+  background-color: #5a6268;
+}

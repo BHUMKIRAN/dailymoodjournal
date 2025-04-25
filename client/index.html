@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Mood Journal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌤️ Daily Mood Journal</h1>
+
+    <div id="authSection">
+      <h2>Login or Register</h2>
+      <form id="authForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" id="toggleAuth">Register</a></p>
+      </form>
+    </div>
+
+    <div id="journalSection" style="display: none;">
+      <button id="logoutBtn">🔓 Logout</button>
+      <form id="moodForm">
+        <label for="mood">Mood:</label>
+        <select id="mood" required>
+          <option value="">Choose a mood</option>
+          <option value="😊 Happy">😊 Happy</option>
+          <option value="😐 Meh">😐 Meh</option>
+          <option value="😢 Sad">😢 Sad</option>
+          <option value="😠 Angry">😠 Angry</option>
+        </select>
+        <label for="note">Note:</label>
+        <textarea id="note" rows="3" placeholder="Today was..."></textarea>
+        <button type="submit">Save Mood</button>
+      </form>
+      <h2>📅 Mood History</h2>
+      <button id="clearHistory">🗑️ Clear All History</button>
+      <div id="entriesList"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
